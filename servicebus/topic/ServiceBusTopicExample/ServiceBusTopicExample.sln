@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreSenderApp", "CoreSenderApp\CoreSenderApp.csproj", "{509070C3-260D-4FF6-83F4-ABA4B707367B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreReceiverApp", "CoreReceiverApp\CoreReceiverApp.csproj", "{731E83A6-4BB1-49DC-9AFB-F2C60FCC7E02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{509070C3-260D-4FF6-83F4-ABA4B707367B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{509070C3-260D-4FF6-83F4-ABA4B707367B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{509070C3-260D-4FF6-83F4-ABA4B707367B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{509070C3-260D-4FF6-83F4-ABA4B707367B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{731E83A6-4BB1-49DC-9AFB-F2C60FCC7E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{731E83A6-4BB1-49DC-9AFB-F2C60FCC7E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{731E83A6-4BB1-49DC-9AFB-F2C60FCC7E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{731E83A6-4BB1-49DC-9AFB-F2C60FCC7E02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
