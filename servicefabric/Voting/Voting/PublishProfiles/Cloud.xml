@@ -20,7 +20,10 @@
                                     AzureActiveDirectory="true"
                                     ServerCertThumbprint="0123456789012345678901234567890123456789" />
   -->
-  <ClusterConnectionParameters ConnectionEndpoint="" />
+  <ClusterConnectionParameters ConnectionEndpoint="embersilk-servicefabric.eastus.cloudapp.azure.com:19000" X509Credential="true" ServerCertThumbprint="A7D4F9DD94327F0E2B520311CB347B3CADE8CC78" FindType="FindByThumbprint" FindValue="5F11377502AEA6788AD8313A532EF6E1D32234D2" StoreLocation="CurrentUser" StoreName="My" />
   <ApplicationParameterFile Path="..\ApplicationParameters\Cloud.xml" />
   <CopyPackageParameters CompressPackage="true" />
+  <UpgradeDeployment Mode="Monitored" Enabled="false">
+    <Parameters FailureAction="Rollback" Force="True" ForceRestart="True" />
+  </UpgradeDeployment>
 </PublishProfile>

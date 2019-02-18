@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Fabric;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using Microsoft.ApplicationInsights.Extensibility;
+using Microsoft.ApplicationInsights.ServiceFabric;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.ServiceFabric.Services.Communication.AspNetCore;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
 using Microsoft.ServiceFabric.Services.Runtime;
-using Microsoft.ServiceFabric.Data;
+using System;
+using System.Collections.Generic;
+using System.Fabric;
+using System.IO;
 using System.Net.Http;
 
 namespace VotingWeb
@@ -47,9 +45,11 @@ namespace VotingWeb
                                 services => services
                                     .AddSingleton<HttpClient>(new HttpClient())
                                     .AddSingleton<FabricClient>(new FabricClient())
-                                    .AddSingleton<StatelessServiceContext>(serviceContext))
+                                    .AddSingleton<StatelessServiceContext>(serviceContext).AddSingleton<ITelemetryInitializer>((serviceProvider) => FabricTelemetryInitializerExtension.CreateFabricTelemetryInitializer(serviceContext)))
+
                             .UseContentRoot(Directory.GetCurrentDirectory())
                             .UseStartup<Startup>()
+                            .UseApplicationInsights()
                             .UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.None)
                             .UseUrls(url)
                             .Build();

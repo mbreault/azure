@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Fabric;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using Microsoft.ApplicationInsights.Extensibility;
+using Microsoft.ApplicationInsights.ServiceFabric;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.ServiceFabric.Data;
 using Microsoft.ServiceFabric.Services.Communication.AspNetCore;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
 using Microsoft.ServiceFabric.Services.Runtime;
-using Microsoft.ServiceFabric.Data;
+using System.Collections.Generic;
+using System.Fabric;
+using System.IO;
 
 namespace VotingData
 {
@@ -41,9 +39,11 @@ namespace VotingData
                                     .ConfigureServices(
                                         services => services
                                             .AddSingleton<StatefulServiceContext>(serviceContext)
-                                            .AddSingleton<IReliableStateManager>(this.StateManager))
+                                            .AddSingleton<IReliableStateManager>(this.StateManager)
+                                            .AddSingleton<ITelemetryInitializer>((serviceProvider) => FabricTelemetryInitializerExtension.CreateFabricTelemetryInitializer(serviceContext)))
                                     .UseContentRoot(Directory.GetCurrentDirectory())
                                     .UseStartup<Startup>()
+                                    .UseApplicationInsights()
                                     .UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.UseUniqueServiceUrl)
                                     .UseUrls(url)
                                     .Build();
