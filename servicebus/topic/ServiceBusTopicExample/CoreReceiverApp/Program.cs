@@ -28,7 +28,7 @@ namespace CoreReceiverApp
             // Register subscription message handler and receive messages in a loop
             RegisterOnMessageHandlerAndReceiveMessages();
 
-            Console.ReadKey();
+            //Console.ReadKey();
 
             await subscriptionClient.CloseAsync();
         }

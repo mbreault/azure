@@ -15,7 +15,7 @@ namespace CoreSenderApp
 
         static async Task MainAsync()
         {
-            const int numberOfMessages = 10;
+            const int numberOfMessages = 1;
             topicClient = new TopicClient(ServiceBusConnectionString, TopicName);
 
 
