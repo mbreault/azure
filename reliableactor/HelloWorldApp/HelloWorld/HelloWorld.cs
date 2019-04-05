@@ -29,7 +29,7 @@ namespace HelloWorld
         public Task<string> GetHelloWorldAsync()
         { 
             TelemetryClient telemetryClient = new TelemetryClient();
-            telemetryClient.InstrumentationKey = "66fdd030-0383-4e52-9981-c69f985f292c";
+            telemetryClient.InstrumentationKey = "REDACTED";
             telemetryClient.TrackEvent("Hello from my reliable actor Event");
             telemetryClient.Flush();
             return Task.FromResult("Hello from my reliable actor!");

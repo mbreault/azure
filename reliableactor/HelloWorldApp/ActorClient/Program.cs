@@ -16,7 +16,7 @@ namespace ActorClient
 
             TelemetryConfiguration configuration = TelemetryConfiguration.Active;
 
-            configuration.InstrumentationKey = "66fdd030-0383-4e52-9981-c69f985f292c";
+            configuration.InstrumentationKey = "REDACTED";
             configuration.TelemetryInitializers.Add(new OperationCorrelationTelemetryInitializer());
 
             var telemetryClient = new TelemetryClient();
