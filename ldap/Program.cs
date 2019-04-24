@@ -8,12 +8,12 @@ namespace ldap
     {
         static void Main(string[] args)
         {
-
             List<string> userNameList = new List<string>();
-            string username = @"REDACTED";
-            string password = @"REDACTED";
+            string username = Environment.GetEnvironmentVariable("LDAP_VM_USER");
+            string password = Environment.GetEnvironmentVariable("LDAP_VM_PASSWORD"); 
+            string domain = Environment.GetEnvironmentVariable("LDAP_VM_AD_DOMAIN");
 
-            using (PrincipalContext context = new PrincipalContext(ContextType.Domain, "REDACTED", username, password))
+            using (PrincipalContext context = new PrincipalContext(ContextType.Domain, domain, username, password))
             {
                 using (UserPrincipal user = new UserPrincipal(context))
                 {
@@ -26,7 +26,7 @@ namespace ldap
                     }
                 }
             }
-
+            Console.ReadLine();
         }
     }
 }
