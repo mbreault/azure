@@ -1,0 +1,1 @@
+https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-tutorial-create-encrypted-storage-accounts
