@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "hostingPlanName": {
+      "value": "DemoSitePlan"
+    },
+    "administratorLogin": {
+      "value": "DemoAdmin"
+    },
+    "administratorLoginPassword": {
+      "value": "yswLZUFCunVYU39z"
+    },
+    "databaseName": {
+      "value": "DemoDatabase"
+    },
+    "ExampleAppPackageFolder": {
+      "value": "ExampleApp"
+    },
+    "ExampleAppPackageFileName": {
+      "value": "package.zip"
+    }
+  }
+}
