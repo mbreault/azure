@@ -1,0 +1,14 @@
+﻿@model WebApplication.Models.IndexModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<p>
+    @foreach (var item in Model.Printers)
+    {
+        <div>@item</div>
+    }
+</p>
+<p>
+    Error Message @Model.ErrorMessage
+</p>
