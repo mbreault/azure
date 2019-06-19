@@ -1,6 +1,8 @@
-﻿using Microsoft.ServiceFabric.Services.Communication.Runtime;
+﻿using Microsoft.ApplicationInsights;
+using Microsoft.ServiceFabric.Services.Communication.Runtime;
 using Microsoft.ServiceFabric.Services.Remoting.Runtime;
 using Microsoft.ServiceFabric.Services.Runtime;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Fabric;
@@ -29,9 +31,17 @@ namespace HelloWorldService
 
         public Task<string> HelloWorldAsync()
         {
+            string loggerName = "HelloWorldServiceLogger";
+
+            TelemetryClient telemetryClient = new TelemetryClient();
+            telemetryClient.TrackEvent("HelloWorldService.HelloWorldAsync called");
+            Logger logger = LogManager.GetLogger(loggerName);
+            logger.Trace("This is a nlog test");
+            telemetryClient.Flush();
+            Thread.Sleep(100);
             return Task.FromResult("Hello!");
         }
 
-      
+
     }
 }
