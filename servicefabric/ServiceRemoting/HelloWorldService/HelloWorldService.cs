@@ -34,11 +34,13 @@ namespace HelloWorldService
             string loggerName = "HelloWorldServiceLogger";
 
             TelemetryClient telemetryClient = new TelemetryClient();
+            telemetryClient.Context.Cloud.RoleName = "HelloWorldService";
+            telemetryClient.Context.Cloud.RoleInstance = "HelloWorldService-RoleInstance";
             telemetryClient.TrackEvent("HelloWorldService.HelloWorldAsync called");
             Logger logger = LogManager.GetLogger(loggerName);
-            logger.Trace("This is a nlog test");
+            logger.Debug("This is a nlog test");
             telemetryClient.Flush();
-            Thread.Sleep(100);
+            Thread.Sleep(1000);
             return Task.FromResult("Hello!");
         }
 
