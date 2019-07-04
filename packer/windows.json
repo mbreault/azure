@@ -28,7 +28,7 @@
     "provisioners": [
         {
             "type": "powershell",
-            "script": "c:\\ABSOLUTLE_PATH_SCRIPT\\setup.ps1"
+            "script": "c:\\ABSOLUTE_PATH_TO_SCRIPT\\setup.ps1"
         },
         {
             "type": "powershell",
