@@ -83,6 +83,7 @@
     <Reference Include="System.ServiceModel" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PrintTestPageHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stateless1.cs" />
     <Compile Include="Program.cs" />

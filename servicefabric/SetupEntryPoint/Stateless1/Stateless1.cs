@@ -35,19 +35,11 @@ namespace Stateless1
         /// <param name="cancellationToken">Canceled when Service Fabric needs to shut down this service instance.</param>
         protected override async Task RunAsync(CancellationToken cancellationToken)
         {
-            // TODO: Replace the following sample code with your own logic 
-            //       or remove this RunAsync override if it's not needed in your service.
+            
 
             long iterations = 0;
-            string sampleText = String.Format("This is test string", DateTime.Today.ToString());
 
-            PrintDocument printDocument = new PrintDocument();
-            printDocument.PrinterSettings.PrinterName = "SFPrinter";
-            printDocument.PrintPage += delegate (object sender1, PrintPageEventArgs e1)
-            {
-                e1.Graphics.DrawString(sampleText, new Font("Times New Roman", 12), new SolidBrush(Color.Black), 10, 10);
-            };
-            printDocument.Print();
+            PrintTestPageHelper.Print("SFPRINTER");
 
             while (true)
             {
