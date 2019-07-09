@@ -2,10 +2,10 @@
     "builders": [
         {
             "type": "azure-arm",
-            "client_id": "REDACTED",
-            "client_secret": "REDACTED",
-            "tenant_id": "REDACTED",
-            "subscription_id": "REDACTED",
+            "client_id": "dd5de506-eb76-461b-b322-ed265acd17f9",
+            "client_secret": "4mf.DxW_b8WORx2luex]fSDuCfYP9:=o",
+            "tenant_id": "5230c49d-e018-4678-a28f-b255a73a21a1",
+            "subscription_id": "889acb63-3714-4edc-bfce-8f54f2c07c00",
             "managed_image_resource_group_name": "emb-managed-image-rg",
             "managed_image_name": "myPackerImage",
             "os_type": "Windows",
@@ -28,7 +28,7 @@
     "provisioners": [
         {
             "type": "powershell",
-            "script": "c:\\ABSOLUTE_PATH_TO_SCRIPT\\setup.ps1"
+            "script": "C:\\Users\\brocom017\\git\\mbreault\\azure\\packer\\setup.ps1"
         },
         {
             "type": "powershell",
